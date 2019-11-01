@@ -3,6 +3,8 @@ package com.test.controller;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,6 +82,7 @@ public class Client
 	public String displayMethod(Model model) 
 	{
 		List<EmployeeModel> al = employeeService.employeeList();
+		
 		model.addAttribute("al", al);
 		return "addMoreEmployees";
 	}
@@ -88,6 +92,8 @@ public class Client
 	{
 		employeeService.delEmployee(id);
 		List<EmployeeModel> al = employeeService.employeeList();
+		
+		
 		model.addAttribute("al", al);
 		return "register3";
 	}
@@ -97,6 +103,8 @@ public class Client
 	{
 		System.out.println("edit Employee");
 		EmployeeModel employeeModel = employeeService.getempbyId(id);
+		
+		
 		model.addAttribute("employeeBean", employeeModel);
 		return new ModelAndView("register3");
 	}

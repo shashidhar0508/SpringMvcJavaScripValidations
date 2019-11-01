@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="E:/Shashidhar/itextpdf-5.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AKBAR/Downloads/com.springsource.org.codehaus.jackson-sources-1.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
